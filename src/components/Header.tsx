@@ -1,60 +1,161 @@
-"use client"
+"use client";
 
-import Toolbar from "@mui/material/Toolbar"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
-import IconButton from "@mui/material/IconButton"
-import Badge, { BadgeProps } from "@mui/material/Badge"
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import { styled } from "@mui/material/styles"
-import { useState } from "react"
-import { Marquee } from "../components/Marquee"
+import Toolbar from "@mui/material/Toolbar";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import CloseIcon from "@mui/icons-material/Close";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { styled } from "@mui/material/styles";
+import { useState } from "react";
+import { Marquee } from "../components/Marquee";
+import Link from "next/link";
 
-const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({ 
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
-        right: 5,
-        top: 10,
-  }
-}))
+    right: 5,
+    top: 10,
+  },
+}));
+
+
 
 const Header: React.FC = () => {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
-  const [showMenu, setShowMenu] = useState<boolean>(false)
+  const showMenustyle = {
+    bgcolor: "#f3f3f3ff",
+    width: "100%",
+    height: "50vh",
+    position: "absolute",
+    top: 50,
+    left: 0,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 3,
+    fontSize: "1rem",
+    fontWeight: 500,
+    transform: showMenu ? 'translateY(0)' : 'translateY(-100%)',
+    transition: 'transform 0.3s ease-in-out',
+    zIndex: 1000
+  };
 
-
- 
   return (
-    <Box sx={{ flexGrow: 1, width: '100%'  }}>
+    <Box sx={{ flexGrow: 1, width: "100%" }}>
       <Marquee />
-      <AppBar position="static" elevation={0} sx={{ bgcolor: '#8EB69B', }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
-          <Box onClick={ e => setShowMenu(prev => !prev) }>
+      <AppBar position="static" elevation={0} sx={{ bgcolor: "#8EB69B" }}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {/* MOBILE MENU */}
+          <Box
+            sx={{ display: { xs: "flex", md: "none" } }}
+            onClick={() => setShowMenu((prev) => !prev)}
+          >
+            {showMenu ? (
               <IconButton>
-              <MenuOpenIcon fontSize='large' sx={{ color: "#163832", fontSize: 20 }}  />Menu
+                <CloseIcon
+                  sx={{ color: "#163832", fontSize: 30, fontWeight: 600 }}
+                />{" "}
               </IconButton>
+            ) : (
+              <IconButton>
+                <MenuOpenIcon
+                  sx={{ color: "#163832", fontSize: 30, fontWeight: 600 }}
+                />
+              </IconButton>
+            )}
+          </Box>
+          {showMenu && (
+            <Box sx={showMenustyle}>
+              {["HOME", "BAGS", "SHOES", "BAGS"].map((item, index) => (
+                <Link
+                  key={index}
+                  href={index === 0 ? "/" : `/${item.toLowerCase()}`}
+                  style={{
+                    color: "#163832",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  {item}
+                </Link>
+              ))}
             </Box>
-            <Box>
-            <Typography variant="h3" sx={{ fontFamily: 'Quintessential', fontSize: { xs: '2rem', md: '3rem'}, color: "#163832", fontWeight: 600, }}>-Vestir-</Typography>
-            </Box>
-          <Box sx={{ display:'flex', alignItems: 'center', gap: 2 }}>
+          )}
+
+          {/* 1080p */}
+
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              flex: 1,
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            {["HOME", "BAGS", "SHOES", "BAGS"].map((item, index) => (
+              <Link
+                key={index}
+                href={index === 0 ? "/" : `/${item.toLowerCase()}`}
+                style={{
+                  color: "#163832",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+              >
+                {item}
+              </Link>
+            ))}
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Quintessential",
+                fontSize: { xs: "2rem", md: "3rem" },
+                color: "#163832",
+                fontWeight: 600,
+              }}
+            >
+              -Vestir-
+            </Typography>
+          </Box>
+
+          <Box sx={{ display: "flex", flex: 1, alignItems: "center", gap: { xs: 1, md: 2} }}>
             <StyledBadge color="primary" badgeContent={5}>
               <IconButton>
-                <FavoriteBorderOutlinedIcon sx={{ color: "#163832" }}  />
+                <FavoriteBorderOutlinedIcon sx={{ color: "#163832" }} />
               </IconButton>
             </StyledBadge>
             <StyledBadge color="primary" badgeContent={5}>
               <IconButton>
-                <ShoppingBagOutlinedIcon sx={{ color: "#163832" }}  />
+                <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />
               </IconButton>
             </StyledBadge>
-            </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

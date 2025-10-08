@@ -6,24 +6,21 @@ import Typography from "@mui/material/Typography"
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
-  overflowX: 'hidden',
   animation: "marquee 30s linear infinite",
 
   '@keyframes marquee': {
     '0%': {
       transform: "translateX(0%)"
     },
-
     '100%': {
       transform: "translateX(-50%)"
     }
   }
-
 }))
 
 export const Marquee = () => {
   return (
-    <Box sx={{ backgroundColor: '#051F20', width: '100%', padding: '10px', fontSize: { xm: '12px', md: '14px' }, textAlign: 'center', color: 'white', overFlow: 'hidden' }}>
+    <Box sx={{ backgroundColor: '#051F20', maxWidth: '100%', padding: '10px 0', fontSize: { xs: '12px', md: '14px' }, textAlign: 'center', color: 'white', overflow: 'hidden', lineHeight: 1.5 }}>
       <StyledBox>
 
         <Typography sx={{ whiteSpace: 'nowrap', paddingRight: '50px' }}>
