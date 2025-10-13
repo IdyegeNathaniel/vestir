@@ -41,15 +41,15 @@ const Header: React.FC = () => {
     gap: 3,
     fontSize: "1rem",
     fontWeight: 500,
-    transform: showMenu ? 'translateY(0)' : 'translateY(-100%)',
-    transition: 'transform 0.3s ease-in-out',
+    transform: showMenu ? "translateY(0)" : "translateY(-100%)",
+    transition: "transform 0.3s ease-in-out",
     zIndex: 1000
   };
 
   return (
     <Box sx={{ flexGrow: 1, width: "100%" }}>
       <Marquee />
-      <AppBar position="static" elevation={0} sx={{ bgcolor: "#8EB69B" }}>
+      <AppBar position="static" sx={{ bgcolor: "#8EB69B" }}>
         <Toolbar
           sx={{
             display: "flex",
@@ -59,12 +59,12 @@ const Header: React.FC = () => {
         >
           {/* MOBILE MENU */}
           <Box
-            sx={{ display: { xs: "flex", md: "none" } }}
+            sx={{ display: { xs: "flex", md: "none" }, flex: 1, justifyContent: "flex-start" }}
             onClick={() => setShowMenu((prev) => !prev)}
           >
             {showMenu ? (
               <IconButton>
-                <CloseIcon
+                <CloseIcon 
                   sx={{ color: "#163832", fontSize: 30, fontWeight: 600 }}
                 />{" "}
               </IconButton>
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           </Box>
           {showMenu && (
             <Box sx={showMenustyle}>
-              {["HOME", "BAGS", "SHOES", "BAGS"].map((item, index) => (
+              {["HOME", "New Collection", "SHOES", "BAGS"].map((item, index) => (
                 <Link
                   key={index}
                   href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            {["HOME", "BAGS", "SHOES", "BAGS"].map((item, index) => (
+            {["HOME", "New Collection", "SHOES", "BAGS"].map((item, index) => (
               <Link
                 key={index}
                 href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -140,7 +140,7 @@ const Header: React.FC = () => {
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", flex: 1, alignItems: "center", gap: { xs: 1, md: 2} }}>
+          <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: { xs: 1, md: 2} }}>
             <StyledBadge color="primary" badgeContent={5}>
               <IconButton>
                 <FavoriteBorderOutlinedIcon sx={{ color: "#163832" }} />

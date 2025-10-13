@@ -3,6 +3,8 @@ import { Quintessential, Inter} from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const quintessential = Quintessential({
   weight: '400',
