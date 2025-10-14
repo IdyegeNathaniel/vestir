@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { ChevronRight, ArrowForward } from '@mui/icons-material';
+import { slides } from './assets/assets';
 
 const HeroSlider = () => {
     const sliderSettings = {
@@ -18,44 +19,6 @@ const HeroSlider = () => {
         cssEase: "ease-in-out",
     };
 
-    const slides = [
-        {
-            id: 1,
-            title: "Discover the Finest African Tailoring",
-            subtitle: "Spring Collection 2025",
-            description: "Explore luxury fashion from the comfort of your home. Each piece tells a story of craftsmanship, tradition, and modern elegance.",
-            buttonText: "Shop Collection",
-            buttonLink: "/collections",
-            bgColor: "#F5F5F0",
-            textColor: "#051F20",
-            accentColor: '#C17817',
-            image: "🤵🏿", // Replace with actual image URL
-        },
-        {
-            id: 2,
-            title: "Executive Senator Collection",
-            subtitle: "New Arrivals",
-            description: "Embrace tradition with our premium senator wear. Handcrafted with intricate embroidery for the distinguished gentleman.",
-            buttonText: "View Collection",
-            buttonLink: "/collections/senator",
-            bgColor: "#051F20",
-            textColor: "#FFFFFF",
-            accentColor: "#C17817",
-            image: "👔", // Replace with actual image URL
-        },
-        {
-            id: 3,
-            title: "Bespoke Tailoring Services",
-            subtitle: "Made Just For You",
-            description: "Experience the perfect fit with our custom tailoring. Book a consultation with our master tailors today.",
-            buttonText: "Book Appointment",
-            buttonLink: "/bespoke",
-            bgColor: "#C17817",
-            textColor: "#FFFFFF",
-            accentColor: "#051F20",
-            image: "🎩", // Replace with actual image URL
-        },
-    ];
 
     return (
         <Box sx={{

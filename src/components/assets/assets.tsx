@@ -844,3 +844,56 @@ export const products: ProductType[] = [
         "thumbnail": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/thumbnail.webp"
     },
 ]
+
+
+export interface SlideType {
+    id: number,
+    title: string,
+    subtitle: string,
+    description: string,
+    buttonText: string,
+    buttonLink: string,
+    bgColor: string,
+    textColor: string,
+    accentColor: string,
+    image: string
+}
+
+export const slides: SlideType[] = [
+        {
+            id: 1,
+            title: "Discover the Finest African Tailoring",
+            subtitle: "Spring Collection 2025",
+            description: "Explore luxury fashion from the comfort of your home. Each piece tells a story of craftsmanship, tradition, and modern elegance.",
+            buttonText: "Shop Collection",
+            buttonLink: "/collections",
+            bgColor: "#F5F5F0",
+            textColor: "#051F20",
+            accentColor: '#C17817',
+            image: "Collection3", // Replace with actual image URL
+        },
+        {
+            id: 2,
+            title: "Executive Senator Collection",
+            subtitle: "New Arrivals",
+            description: "Embrace tradition with our premium senator wear. Handcrafted with intricate embroidery for the distinguished gentleman.",
+            buttonText: "View Collection",
+            buttonLink: "/collections/senator",
+            bgColor: "#051F20",
+            textColor: "#FFFFFF",
+            accentColor: "#C17817",
+            image: "Collection4", // Replace with actual image URL
+        },
+        {
+            id: 3,
+            title: "Bespoke Tailoring Services",
+            subtitle: "Made Just For You",
+            description: "Experience the perfect fit with our custom tailoring. Book a consultation with our master tailors today.",
+            buttonText: "Book Appointment",
+            buttonLink: "/bespoke",
+            bgColor: "#C17817",
+            textColor: "#FFFFFF",
+            accentColor: "#051F20",
+            image: "Collection5", // Replace with actual image URL
+        },
+    ];

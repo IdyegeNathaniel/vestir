@@ -1,5 +1,5 @@
 import { ProductCard } from "@/components/ProductCard";
-import { ProductsList } from "@/components/ProductsList";
+import {                                                                                                                                                                                                                                                                                                                                                                                                                                                         ProductsList } from "@/components/ProductsList";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
