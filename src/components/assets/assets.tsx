@@ -847,53 +847,37 @@ export const products: ProductType[] = [
 
 
 export interface SlideType {
-    id: number,
-    title: string,
-    subtitle: string,
-    description: string,
-    buttonText: string,
-    buttonLink: string,
-    bgColor: string,
-    textColor: string,
-    accentColor: string,
-    image: string
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  cta: string;
 }
 
+
+
 export const slides: SlideType[] = [
-        {
-            id: 1,
-            title: "Discover the Finest African Tailoring",
-            subtitle: "Spring Collection 2025",
-            description: "Explore luxury fashion from the comfort of your home. Each piece tells a story of craftsmanship, tradition, and modern elegance.",
-            buttonText: "Shop Collection",
-            buttonLink: "/collections",
-            bgColor: "#F5F5F0",
-            textColor: "#051F20",
-            accentColor: '#C17817',
-            image: "Collection3", // Replace with actual image URL
-        },
-        {
-            id: 2,
-            title: "Executive Senator Collection",
-            subtitle: "New Arrivals",
-            description: "Embrace tradition with our premium senator wear. Handcrafted with intricate embroidery for the distinguished gentleman.",
-            buttonText: "View Collection",
-            buttonLink: "/collections/senator",
-            bgColor: "#051F20",
-            textColor: "#FFFFFF",
-            accentColor: "#C17817",
-            image: "Collection4", // Replace with actual image URL
-        },
-        {
-            id: 3,
-            title: "Bespoke Tailoring Services",
-            subtitle: "Made Just For You",
-            description: "Experience the perfect fit with our custom tailoring. Book a consultation with our master tailors today.",
-            buttonText: "Book Appointment",
-            buttonLink: "/bespoke",
-            bgColor: "#C17817",
-            textColor: "#FFFFFF",
-            accentColor: "#051F20",
-            image: "Collection5", // Replace with actual image URL
-        },
-    ];
+  {
+    id: 1,
+    title: "Vestir Collection 2026",
+    subtitle: "Discover the latest trends",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop",
+    cta: "Shop Now"
+  },
+  {
+    id: 2,
+    title: "New Arrivals",
+    subtitle: "Fresh styles just landed",
+    image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&h=600&fit=crop",
+    cta: "Explore"
+  },
+  {
+    id: 3,
+    title: "Shop Vestir",
+    subtitle: "Explore luxury fashion from the comfort of your home.",
+    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=600&fit=crop",
+    cta: "Get Deal"
+  }
+];
+
+

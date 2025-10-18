@@ -41,9 +41,9 @@ export const ProductsList = () => {
             </Box>
 
             <Box sx={{ alignItems: "center" }}>
-                <Grid container spacing={{ xs: 2, md: 3 }}>
-                    {products.map((product) => (
-                        <Grid key={product.id} size={{ xs: 12, sm: 6, md: 4 }} sx={{ display: "flex", }}>
+                <Grid container spacing={{ xs: 2, md: 3, }}>
+                    {products.slice(0, 8).map((product) => (
+                        <Grid key={product.id} size={{ xs: 12, sm: 6, md: 3 }} sx={{ display: "flex", }}>
                             
                                 <ProductCard product={product} />
                             
