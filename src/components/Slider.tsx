@@ -1,275 +1,201 @@
-import React from 'react';
-import Slider from 'react-slick';
-import { Box, Container, Typography, Button, Stack } from '@mui/material';
-import { ChevronRight, ArrowForward } from '@mui/icons-material';
-import { slides } from './assets/assets';
+"use client"
 
-const HeroSlider = () => {
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        pauseOnHover: true,
-        arrows: true,
-        cssEase: "ease-in-out",
-    };
+import { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import Image from 'next/image';
+import { slides } from "@/components/assets/assets";
 
 
-    return (
-        <Box sx={{
-            width: "100%",
-            overflow: "hidden",
-            '& .slick-slider': {
-                position: 'relative',
-            },
-            '& .slick-dots': {
-                bottom: '30px',
-                '& li button:before': {
-                    fontSize: '12px',
-                    color: 'white',
-                    opacity: 0.5,
-                },
-                '& li.slick-active button:before': {
-                    opacity: 1,
-                    color: 'white',
-                },
-            },
-            '& .slick-arrow': {
-                zIndex: 10,
-                width: '50px',
-                height: '50px',
-                '&:before': {
-                    fontSize: '50px',
-                },
-            },
-            '& .slick-prev': {
-                left: '30px',
-            },
-            '& .slick-next': {
-                right: '30px',
-            },
-        }}>
-            <Slider {...sliderSettings}>
-                {slides.map((slide) => (
-                    <Box key={slide.id}>
-                        <Box
-                            sx={{
-                                backgroundColor: slide.bgColor,
-                                color: slide.textColor,
-                                minHeight: { xs: '500px', md: '600px', lg: '700px' },
-                                display: 'flex !important',
-                                alignItems: 'center',
-                                position: 'relative',
-                                overflow: 'hidden',
-                            }}
-                        >
-                            <Container maxWidth="lg">
-                                <Box
-                                    sx={{
-                                        display: 'grid',
-                                        gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-                                        gap: 4,
-                                        alignItems: 'center',
-                                        py: { xs: 6, md: 8 },
-                                    }}
-                                >
-                                    {/* Text Content */}
-                                    <Box
-                                        sx={{
-                                            zIndex: 2,
-                                            animation: 'fadeInLeft 0.8s ease-out',
-                                            '@keyframes fadeInLeft': {
-                                                '0%': {
-                                                    opacity: 0,
-                                                    transform: 'translateX(-30px)',
-                                                },
-                                                '100%': {
-                                                    opacity: 1,
-                                                    transform: 'translateX(0)',
-                                                },
-                                            },
-                                        }}
-                                    >
-                                        <Typography
-                                            variant="overline"
-                                            sx={{
-                                                color: slide.accentColor,
-                                                fontWeight: 600,
-                                                letterSpacing: 2,
-                                                mb: 2,
-                                                display: 'block',
-                                            }}
-                                        >
-                                            {slide.subtitle}
-                                        </Typography>
+export default function HeroSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-                                        <Typography
-                                            variant="h1"
-                                            sx={{
-                                                fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4.5rem' },
-                                                fontWeight: 700,
-                                                lineHeight: 1.2,
-                                                mb: 3,
-                                            }}
-                                        >
-                                            {slide.title}
-                                        </Typography>
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
+      }, 10000);
+      
+      return () => clearInterval(interval);
+    }
+  }, [isPaused]);
 
-                                        <Typography
-                                            variant="body1"
-                                            sx={{
-                                                fontSize: { xs: '1rem', md: '1.125rem' },
-                                                mb: 4,
-                                                maxWidth: '500px',
-                                                opacity: 0.9,
-                                                lineHeight: 1.7,
-                                            }}
-                                        >
-                                            {slide.description}
-                                        </Typography>
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
 
-                                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                                            <Button
-                                                variant="contained"
-                                                size="large"
-                                                endIcon={<ArrowForward />}
-                                                href={slide.buttonLink}
-                                                sx={{
-                                                    backgroundColor: slide.accentColor,
-                                                    color: slide.bgColor === '#051F20' ? '#FFFFFF' : '#051F20',
-                                                    px: 4,
-                                                    py: 1.5,
-                                                    borderRadius: '50px',
-                                                    textTransform: 'none',
-                                                    fontSize: '1rem',
-                                                    fontWeight: 600,
-                                                    '&:hover': {
-                                                        backgroundColor: slide.accentColor,
-                                                        opacity: 0.9,
-                                                        transform: 'translateY(-2px)',
-                                                    },
-                                                    transition: 'all 0.3s ease',
-                                                }}
-                                            >
-                                                {slide.buttonText}
-                                            </Button>
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
-                                            <Button
-                                                variant="outlined"
-                                                size="large"
-                                                href="/contact"
-                                                sx={{
-                                                    borderColor: slide.textColor,
-                                                    color: slide.textColor,
-                                                    px: 4,
-                                                    py: 1.5,
-                                                    borderRadius: '50px',
-                                                    textTransform: 'none',
-                                                    fontSize: '1rem',
-                                                    fontWeight: 600,
-                                                    borderWidth: 2,
-                                                    '&:hover': {
-                                                        borderWidth: 2,
-                                                        borderColor: slide.textColor,
-                                                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                                    },
-                                                }}
-                                            >
-                                                Contact Us
-                                            </Button>
-                                        </Stack>
-                                    </Box>
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  };
 
-                                    {/* Image/Visual Element */}
-                                    <Box
-                                        sx={{
-                                            display: { xs: 'none', md: 'flex' },
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            position: 'relative',
-                                            animation: 'fadeInRight 0.8s ease-out',
-                                            '@keyframes fadeInRight': {
-                                                '0%': {
-                                                    opacity: 0,
-                                                    transform: 'translateX(30px)',
-                                                },
-                                                '100%': {
-                                                    opacity: 1,
-                                                    transform: 'translateX(0)',
-                                                },
-                                            },
-                                        }}
-                                    >
-                                        <Box
-                                            sx={{
-                                                width: '100%',
-                                                maxWidth: '500px',
-                                                height: '500px',
-                                                borderRadius: '20px',
-                                                background: `linear-gradient(135deg, ${slide.accentColor}20 0%, transparent 100%)`,
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                fontSize: '12rem',
-                                                position: 'relative',
-                                                '&::before': {
-                                                    content: '""',
-                                                    position: 'absolute',
-                                                    inset: 0,
-                                                    borderRadius: '20px',
-                                                    border: `2px solid ${slide.accentColor}40`,
-                                                    animation: 'pulse 2s ease-in-out infinite',
-                                                },
-                                                '@keyframes pulse': {
-                                                    '0%, 100%': {
-                                                        transform: 'scale(1)',
-                                                        opacity: 1,
-                                                    },
-                                                    '50%': {
-                                                        transform: 'scale(1.05)',
-                                                        opacity: 0.8,
-                                                    },
-                                                },
-                                            }}
-                                        >
-                                            {/* Replace with actual Image component */}
-                                            {slide.image}
-                                            {/* <Image 
-                        src={slide.image} 
-                        alt={slide.title}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                      /> */}
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Container>
+  return (
+    <Box 
+      sx={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: { xs: '400px', md: '500px' }, 
+        overflow: 'hidden' 
+      }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Slides Container */}
+      <Box 
+        sx={{ 
+          display: 'flex',
+          height: '100%',
+          transition: 'transform 0.7s ease-in-out',
+          transform: `translateX(-${currentIndex * 100}%)`
+        }}
+      >
+        {slides.map((slide) => (
+          <Box
+            key={slide.id}
+            sx={{ 
+              minWidth: '100%', 
+              height: '100%', 
+              position: 'relative' 
+            }}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority={slide.id === 1}
+            />
+            <Box 
+              sx={{ 
+                position: 'absolute', 
+                inset: 0, 
+                bgcolor: 'rgba(0, 0, 0, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <Box sx={{ textAlign: 'center', color: 'white', px: 2 }}>
+                <Typography 
+                  variant="h2" 
+                  sx={{ 
+                    fontSize: { xs: '2.5rem', md: '3.75rem' },
+                    fontWeight: 700,
+                    mb: 2
+                  }}
+                >
+                  {slide.title}
+                </Typography>
+                <Typography 
+                  variant="h5" 
+                  sx={{ 
+                    fontSize: { xs: '1.25rem', md: '1.5rem' },
+                    mb: 4
+                  }}
+                >
+                  {slide.subtitle}
+                </Typography>
+                <Button 
+                  variant="contained" 
+                  size="large"
+                  sx={{ 
+                    textTranform: "none",
+                    bgcolor: '#8EB69B',
+                    color: '#000',
+                    px: 4,
+                    py: 1.5,
+                    fontWeight: 600,
+                    '&:hover': {
+                      bgcolor: '#235347',
+                      color: 'white'
+                    }
+                  }}
+                >
+                  {slide.cta}
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        ))}
+      </Box>
 
-                            {/* Decorative Elements */}
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: '-10%',
-                                    right: '-5%',
-                                    width: '400px',
-                                    height: '400px',
-                                    borderRadius: '50%',
-                                    background: `radial-gradient(circle, ${slide.accentColor}10 0%, transparent 70%)`,
-                                    pointerEvents: 'none',
-                                    display: { xs: 'none', lg: 'block' },
-                                }}
-                            />
-                        </Box>
-                    </Box>
-                ))}
-            </Slider>
-        </Box>
-    );
-};
+      {/* Navigation Arrows */}
+      <IconButton
+        onClick={goToPrevious}
+        sx={{
+          position: 'absolute',
+          left: { xs: 1, md: 2 },
+          top: '50%',
+          transform: 'translateY(-50%)',
+          bgcolor: 'rgba(255, 255, 255, 0.5)',
+          '&:hover': {
+            bgcolor: 'rgba(255, 255, 255, 0.75)'
+          }
+        }}
+        aria-label="Previous slide"
+      >
+        <ChevronLeft />
+      </IconButton>
+      <IconButton
+        onClick={goToNext}
+        sx={{
+          position: 'absolute',
+          right: { xs: 1, md: 2 },
+          top: '50%',
+          transform: 'translateY(-50%)',
+          bgcolor: 'rgba(255, 255, 255, 0.5)',
+          '&:hover': {
+            bgcolor: 'rgba(255, 255, 255, 0.75)'
+          }
+        }}
+        aria-label="Next slide"
+      >
+        <ChevronRight />
+      </IconButton>
 
-export default HeroSlider;
+      {/* Dots Indicator */}
+      <Box 
+        sx={{ 
+          position: 'absolute', 
+          bottom: { xs: 2, md: 4 },
+          left: '50%', 
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: 1
+        }}
+      >
+        {slides.map((_, index) => (
+          <Box
+            key={index}
+            component="button"
+            onClick={() => goToSlide(index)}
+            sx={{
+              width: index === currentIndex ? 32 : 12,
+              height: 12,
+              borderRadius: 6,
+              bgcolor: index === currentIndex 
+                ? '#235347'
+                : '#8EB69B',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                bgcolor: index === currentIndex 
+                  ? '#235347' 
+                  : 'rgba(255, 255, 255, 0.75)'
+              }
+            }}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </Box>
+    </Box>
+  );
+}
