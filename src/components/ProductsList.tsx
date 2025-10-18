@@ -7,11 +7,17 @@ import { Categories } from "./Categories"
 import { ProductCard } from "./ProductCard"
 import { useState, useEffect } from "react"
 import { products } from "../components/assets/assets"
+import Button from "@mui/material/Button"
 
 
 export const ProductsList = () => {
     // const [products, setProducts] =useState<string[]>([])
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false);
+    const [allProducts, setAllProducts] = useState<number>(8)
+
+    const handleshowMore = () => { setAllProducts(products.length) };
+
+    const showViewMoreBtn = allProducts < products.length
 
 
     // useEffect(() => {
@@ -42,7 +48,7 @@ export const ProductsList = () => {
 
             <Box sx={{ alignItems: "center" }}>
                 <Grid container spacing={{ xs: 2, md: 3, }}>
-                    {products.slice(0, 8).map((product) => (
+                    {products.slice(0, allProducts).map((product) => (
                         <Grid key={product.id} size={{ xs: 12, sm: 6, md: 3 }} sx={{ display: "flex", }}>
                             
                                 <ProductCard product={product} />
@@ -51,6 +57,11 @@ export const ProductsList = () => {
                     ))}
                 </Grid>
             </Box>
+            { showViewMoreBtn &&
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: 2 }}>
+                     <Button variant="contained" sx={{ bgcolor: "" }} onClick={handleshowMore}>View More</Button>
+                </Box>
+            }   
         </Box>
     )
 }
