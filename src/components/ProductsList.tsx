@@ -41,7 +41,7 @@ export const ProductsList = () => {
 
 
     return (
-        <Box>
+        <Box component="section">
             <Box sx={{ marginY: 5 }}>
                 <Categories />
             </Box>
@@ -59,7 +59,7 @@ export const ProductsList = () => {
             </Box>
             { showViewMoreBtn &&
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: 2 }}>
-                     <Button variant="contained" sx={{ bgcolor: "" }} onClick={handleshowMore}>View More</Button>
+                    <Button variant="contained" sx={{ bgcolor: "#163832", '&:hover': { bgcolor: "#235347" } }} onClick={handleshowMore}>View More</Button>
                 </Box>
             }   
         </Box>

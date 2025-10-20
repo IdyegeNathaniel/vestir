@@ -10,6 +10,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Chip from "@mui/material/Chip"
 import Button from "@mui/material/Button"
+import { ShoppingCart } from "lucide-react"
 
 
 export const ProductCard = ({ product }: { product: ProductType }) => {
@@ -19,7 +20,7 @@ export const ProductCard = ({ product }: { product: ProductType }) => {
     <Box sx={{ width: "100%", height: "100%", display: 'flex', flexDirection: 'column', gap: 1, borderRadius: "4px", boxShadow: 2 }}>
       <Box sx={{ position: "relative", display: "flex", justifyContent: "center",  alignItems: "center" }}>
         <Chip sx={{ position: "absolute", top: 10, right: 10, fontSize: "14px", bgcolor: "red", color: "white", textAlign: "center"  }} size="small" label={- `${product.discountPercentage}`} />
-        <Link href="#">
+        <Link href={`/product/${product.id}`}>
           <Image src={product.thumbnail} width={280} height={250} style={{ height: "250px", width: "100%", objectFit: "cover" }} alt="product-img" />
         </Link>
       </Box>
@@ -32,7 +33,7 @@ export const ProductCard = ({ product }: { product: ProductType }) => {
           <Typography variant="body2" sx={{ fontSize: { xs: "14px", md: "18px" }, fontWeight: 600 }}>${product.price}</Typography>
           <Rating defaultValue={product.rating} precision={0.5} size="small" readOnly />
         </Stack>
-        <Button variant="contained" size="medium"  sx={{textTranform: "none", bgcolor: "#163832", '&:hover': { bgcolor: "#235347" }}}>Add to Cart</Button>
+        <Button variant="contained" size="medium"  sx={{textTranform: "none", bgcolor: "#163832", '&:hover': { bgcolor: "#235347" }}} startIcon={<ShoppingCart style={{ width: "14px", height: "14px" }} />}>Add to Cart</Button>
       </Box>
     </Box>
   )

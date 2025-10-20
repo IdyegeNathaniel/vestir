@@ -9,7 +9,7 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import Person from "@mui/icons-material/Person";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { Marquee } from "../components/Marquee";
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            {["HOME", "New Collection", "SHOES", "BAGS"].map((item, index) => (
+            {["HOME", "NEW COLLECTIONS", "SHOES", "BAGS"].map((item, index) => (
               <Link
                 key={index}
                 href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -139,13 +139,13 @@ const Header: React.FC = () => {
               -Vestir-
             </Typography>
           </Box>
-
+          
+          {/* CART AND PROFILE */}
           <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: { xs: 1, md: 2} }}>
-            <StyledBadge color="primary" badgeContent={5}>
+            
               <IconButton>
-                <FavoriteBorderOutlinedIcon sx={{ color: "#163832" }} />
+                <Person sx={{ color: "#163832" }} />
               </IconButton>
-            </StyledBadge>
             <StyledBadge color="primary" badgeContent={5}>
               <IconButton>
                 <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />

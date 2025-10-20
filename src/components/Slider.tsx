@@ -5,14 +5,15 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import ChevronLeft from '@mui/icons-material/ChevronLeft';
+import ChevronRight from '@mui/icons-material/ChevronRight';
 import Image from 'next/image';
 import { slides } from "@/components/assets/assets";
 
 
 export default function HeroSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
   useEffect(() => {
     if (!isPaused) {
@@ -41,7 +42,7 @@ export default function HeroSlider() {
       sx={{ 
         position: 'relative', 
         width: '100%', 
-        height: { xs: '400px', md: '500px' }, 
+        height: { xs: '100vh', md: '500px' }, 
         overflow: 'hidden' 
       }}
       onMouseEnter={() => setIsPaused(true)}
