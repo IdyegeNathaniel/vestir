@@ -4,6 +4,7 @@ import New1 from "./Images/New1.jpg";
 import Collection1 from "./Images/Collection1.jpg";
 import Collection2 from "./Images/Collection2.jpg";
 import Collection3 from "./Images/Collection3.jpg";
+import Collection31 from "./Images/Collection3.1.jpg";
 import Collection4 from "./Images/Collection4.jpg";
 import Collection5 from "./Images/Collection5.jpg";
 import { StaticImageData } from "next/image";
@@ -15,6 +16,7 @@ interface ImagesTypes {
     Collection1: StaticImageData,
     Collection2: StaticImageData,
     Collection3: StaticImageData,
+    Collection31: StaticImageData,
     Collection4: StaticImageData,
     Collection5: StaticImageData
 }
@@ -26,6 +28,7 @@ export const images: ImagesTypes = {
     Collection1,
     Collection2,
     Collection3,
+    Collection31,
     Collection4,
     Collection5
 }

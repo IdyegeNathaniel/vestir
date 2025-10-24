@@ -118,7 +118,7 @@ const Header: React.FC = () => {
               </Link>
             ))}
           </Box>
-
+{/* LOGO */}
           <Box
             sx={{
               display: "flex",
@@ -127,21 +127,25 @@ const Header: React.FC = () => {
               alignItems: "center",
             }}
           >
+            <Link href="/" style={{
+              textDecoration: "none",
+              color: "#163832",
+}}>
             <Typography
               variant="h3"
               sx={{
                 fontFamily: "Quintessential",
                 fontSize: { xs: "2rem", md: "3rem" },
-                color: "#163832",
                 fontWeight: 600,
               }}
             >
               -Vestir-
-            </Typography>
+              </Typography>
+            </Link>
           </Box>
           
           {/* CART AND PROFILE */}
-          <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: { xs: 1, md: 2} }}>
+          <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: 1 }}>
             
               <IconButton>
                 <Person sx={{ color: "#163832" }} />

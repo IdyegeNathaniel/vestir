@@ -1,3 +1,4 @@
+import { Collections } from "@/components/Collections";
 import { ProductsList } from "@/components/ProductsList";
 import HeroSlider from "@/components/Slider";
 import Box from "@mui/material/Box";
@@ -15,6 +16,9 @@ export default function Home() {
             </Box>
             <Box sx={{ my: { xs: 2, md: 5 }, padding: "0 24px" }}>
                 <ProductsList />
+            </Box>
+            <Box sx={{ my: { xs: 2, md: 5 }, padding: "0 24px" }}>
+                <Collections />
             </Box>
         </Box>
     )
