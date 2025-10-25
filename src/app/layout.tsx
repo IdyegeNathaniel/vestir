@@ -8,6 +8,7 @@ const quintessential = Quintessential({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-quintessential',
 });
 
 const inter = Inter({
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={quintessential.variable}>
       <body
         className={`${inter.variable} antialiased`}
         style={{ backgroundColor: '#f3f3f3ff' }}

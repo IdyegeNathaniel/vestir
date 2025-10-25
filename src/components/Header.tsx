@@ -134,9 +134,9 @@ const Header: React.FC = () => {
             <Typography
               variant="h3"
               sx={{
-                fontFamily: "Quintessential",
+                fontFamily: 'var(--font-quintessential)',
                 fontSize: { xs: "2rem", md: "3rem" },
-                fontWeight: 600,
+                fontWeight: 400,
               }}
             >
               -Vestir-
