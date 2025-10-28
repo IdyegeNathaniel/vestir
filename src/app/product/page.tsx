@@ -1,19 +1,30 @@
-import { products } from "@/components/assets/assets"
+"use client"
+
+import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
-import Image from "next/image"
+import Grid from "@mui/material/Grid"
+import { Categories } from "@/components/Categories"
+import { ProductCard } from "@/components/ProductCard"
+import { useState, useEffect } from "react"
+import { products } from "@/components/assets/assets"
+
 
 export default function ProductPage() {
-    return (
-        <Box component="section" sx={{ bgcolor: "white", padding: "10px 24px" }}> 
-            <Box sx={{ width: "100%", display: "flex", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 5 }, alignItems: "center", justifyContent: "center" }}>
-                {/* LEFT BOX */}
-                <Box sx={{  }}>
-                    {/* <Image src={} width={400} height={400} alt="umage" /> */}
+     return (
+         <Box component="section" sx={{ padding: "24px" }}>
+                <Box sx={{ marginY: 5 }}>
+                    <Categories />
                 </Box>
-
-                {/* RIGHT BOX */}
-                <Box>RIGHT</Box>
+    
+                <Box sx={{ alignItems: "center" }}>
+                    <Grid container spacing={{ xs: 2, md: 3, }}>
+                        {products.map((product) => (
+                            <Grid key={product.id} size={{ xs: 12, sm: 6, md: 3 }} sx={{ display: "flex", }}>
+                                    <ProductCard product={product} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box> 
             </Box>
-        </Box>
-    )
+        )
 }

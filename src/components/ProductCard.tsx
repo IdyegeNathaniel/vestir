@@ -36,5 +36,5 @@ export const ProductCard = ({ product }: { product: ProductType }) => {
         <Button variant="contained" size="medium"  sx={{textTranform: "none", bgcolor: "#163832", '&:hover': { bgcolor: "#235347" }}} startIcon={<ShoppingCart style={{ width: "14px", height: "14px" }} />}>Add to Cart</Button>
       </Box>
     </Box>
-  )
+  ) 
 }
