@@ -20,7 +20,7 @@ export const ProductCard = ({ product }: { product: ProductType }) => {
     <Box sx={{ width: "100%", height: "100%", display: 'flex', flexDirection: 'column', gap: 1, borderRadius: "4px", boxShadow: 2 }}>
       <Box sx={{ position: "relative", display: "flex", justifyContent: "center",  alignItems: "center" }}>
         <Chip sx={{ position: "absolute", top: 10, right: 10, fontSize: "14px", bgcolor: "red", color: "white", textAlign: "center"  }} size="small" label={- `${product.discountPercentage}`} />
-        <Link href={`/product/${product.id}`}>
+        <Link href={`/products/${product.id}`}>
           <Image src={product.thumbnail} width={280} height={250} style={{ height: "250px", width: "100%", objectFit: "cover",}} alt="product-img" />
         </Link>
       </Box>

@@ -40,12 +40,12 @@ export default function NotFound() {
             sx={{
               display: 'inline-block',
               color: '#000',
-              border: '2px solid #d32f2f',
+              border: '2px solid #163832',
               padding: '8px 16px',
               borderRadius: '20px',
               fontWeight: 500,
               '&:hover': {
-                backgroundColor: '#d32f2f',
+                backgroundColor: '#163832',
                 color: '#fff',
               },
               transition: 'all 0.3s ease',

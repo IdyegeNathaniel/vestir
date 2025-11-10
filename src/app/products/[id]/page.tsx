@@ -1,4 +1,4 @@
-"use client";
+
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -11,19 +11,22 @@ import Button from "@mui/material/Button";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import { getProductById } from "@/app/lib/product";
 
-export default function SingleProduct({ params }: { params: { id: number } }) {
-  const product = getProductById(params.id);
+export default async function SingleProduct({ params }: { params: Promise<{ id: string }> }) {
+  
+  const {id} = await params
+  const product = getProductById(Number(id))
 
   if (!product) {
     return notFound();
-  }
+  } 
 
-  const [selectedImage, setSelectedImage] = useState<string[]>(product.images);
-  //const [thumbnail, setThumbnail] = useState<boolean>(false)
+  //Mini Images
+  // const[imageSwitch, setImageSwitch] = useState({
+  //   image
+  // })
 
-  const handleSwitch = (imageUrl: string[]) => {
-    setSelectedImage(imageUrl);
-  };
+  // const handleImageSwitch = 
+
   return (
     <Box component="section" sx={{ padding: { xs: "12px", md: "24px" } }}>
       <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
@@ -79,6 +82,7 @@ export default function SingleProduct({ params }: { params: { id: number } }) {
             ))}
           </Grid>
         </Box>
+
 
         {/* RIGHT BOX */}
         <Box

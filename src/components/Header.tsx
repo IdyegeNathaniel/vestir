@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           </Box>
           {showMenu && (
             <Box sx={showMenustyle}>
-              {["HOME", "New Collection", "SHOES", "BAGS"].map((item, index) => (
+              {["HOME", "PRODUCTS", "ABOUT", "CONTACT"].map((item, index) => (
                 <Link
                   key={index}
                   href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            {["HOME", "NEW COLLECTIONS", "SHOES", "BAGS"].map((item, index) => (
+            {["HOME", "PRODUCTS", "ABOUT", "CONTACT"].map((item, index) => (
               <Link
                 key={index}
                 href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -147,10 +147,15 @@ const Header: React.FC = () => {
           {/* CART AND PROFILE */}
           <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: 1 }}>
             
+            {/* Profile */}
+
               <IconButton>
                 <Person sx={{ color: "#163832" }} />
               </IconButton>
-            <StyledBadge color="primary" badgeContent={5}>
+            
+            {/* Cart */}
+            
+            <StyledBadge color="primary" badgeContent={2}>
               <IconButton>
                 <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />
               </IconButton>
