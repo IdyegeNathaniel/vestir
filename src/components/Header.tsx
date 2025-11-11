@@ -9,7 +9,7 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import Person from "@mui/icons-material/Person";
+import Person from "@mui/icons-material/PersonOutlined";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { Marquee } from "../components/Marquee";
