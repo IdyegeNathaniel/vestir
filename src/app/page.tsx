@@ -2,7 +2,6 @@ import { Collections } from "@/components/Collections";
 import { ProductsList } from "@/components/ProductsList";
 import HeroSlider from "@/components/Slider";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 
 
 const backGround = {

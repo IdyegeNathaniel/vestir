@@ -14,6 +14,7 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { Marquee } from "../components/Marquee";
 import Link from "next/link";
+import { Tooltip } from "@mui/material";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -78,7 +79,7 @@ const Header: React.FC = () => {
           </Box>
           {showMenu && (
             <Box sx={showMenustyle}>
-              {["HOME", "PRODUCTS", "ABOUT", "CONTACT"].map((item, index) => (
+              {["HOME", "PRODUCTS", "APPOINTMENT"].map((item, index) => (
                 <Link
                   key={index}
                   href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -104,7 +105,7 @@ const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            {["HOME", "PRODUCTS", "ABOUT", "CONTACT"].map((item, index) => (
+            {["HOME", "PRODUCTS", "APPOINTMENT"].map((item, index) => (
               <Link
                 key={index}
                 href={index === 0 ? "/" : `/${item.toLowerCase()}`}
@@ -148,18 +149,20 @@ const Header: React.FC = () => {
           <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: 1 }}>
             
             {/* Profile */}
-
-              <IconButton>
-                <Person sx={{ color: "#163832" }} />
-              </IconButton>
+              <Tooltip title="Profile" enterDelay={500} leaveDelay={300}>
+                <IconButton aria-label="profile">
+                  <Person sx={{ color: "#163832" }} />
+                </IconButton>
+              </Tooltip>
             
             {/* Cart */}
-            
-            <StyledBadge color="primary" badgeContent={2}>
-              <IconButton>
-                <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />
-              </IconButton>
-            </StyledBadge>
+            <Tooltip title="Cart" enterDelay={500} leaveDelay={300}>
+              <StyledBadge color="primary" badgeContent={2}>
+                <IconButton aria-label="cart">
+                  <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />
+                </IconButton>
+              </StyledBadge>
+            </Tooltip>
           </Box>
         </Toolbar>
       </AppBar>
