@@ -150,16 +150,16 @@ const Header: React.FC = () => {
             
             {/* Profile */}
               <Tooltip title="Profile" enterDelay={500} leaveDelay={300}>
-                <IconButton aria-label="profile">
-                  <Person sx={{ color: "#163832" }} />
+                <IconButton aria-label="profile" component={Link} href="/profile" >
+                  <Person sx={{ fontSize: {xs: "1rem", md: "2rem"}, color: "#163832" }} />
                 </IconButton>
               </Tooltip>
             
             {/* Cart */}
             <Tooltip title="Cart" enterDelay={500} leaveDelay={300}>
               <StyledBadge color="primary" badgeContent={2}>
-                <IconButton aria-label="cart">
-                  <ShoppingBagOutlinedIcon sx={{ color: "#163832" }} />
+                <IconButton aria-label="cart" component={Link} href="/cart" >
+                  <ShoppingBagOutlinedIcon sx={{ fontSize: {xs: "1rem", md: "2rem"}, color: "#163832" }} />
                 </IconButton>
               </StyledBadge>
             </Tooltip>
