@@ -150,7 +150,7 @@ const Header: React.FC = () => {
             
             {/* Profile */}
               <Tooltip title="Profile" enterDelay={500} leaveDelay={300}>
-                <IconButton aria-label="profile" component={Link} href="/profile" >
+                <IconButton aria-label="profile" component={Link} href="/login" >
                   <Person sx={{ fontSize: {xs: "1rem", md: "2rem"}, color: "#163832" }} />
                 </IconButton>
               </Tooltip>

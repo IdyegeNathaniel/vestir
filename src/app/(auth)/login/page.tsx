@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { IconButton, InputAdornment } from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Visibility from "@mui/icons-material/Visibility";
+import Link from "@mui/material/Link";
+import InputLabel from "@mui/material/InputLabel";
 
 export default function LoginPage() {
   const [isPassword, setIsPassword] = useState<boolean>(true);
@@ -28,39 +33,43 @@ export default function LoginPage() {
     >
       <Box
         sx={{
-          width: "500px",
+          maxWidth: "500px",
           padding: "12px 24px",
-          border: "2px solid black",
           display: "flex",
-          justifyContent: "start",
+          justifyContent: "center",
           alignItems: "center",
+          
         }}
       >
-        <Stack direction="column" spacing={3}>
+        <Stack component="form" direction="column" spacing={3}>
           <Stack direction="column" spacing={2}>
             <Typography variant="h4">Log in</Typography>
-            <Typography variant="h6" sx={{ fontWeight: 400 }}>
+            <Typography variant="h6" sx={{ color: "#3b3939ff" }}>
               Enter your email address and password
             </Typography>
+            
           </Stack>
-          <FormControl sx={{ gap: 2 }} required>
+
             <TextField
               type="email"
-              sx={{ minWidth: "500px" }}
               variant="outlined"
-              label="Email address"
+              id="email"
+              label="Email"
+              sx={{ minWidth: "500px", borderRadius: "" }}
               placeholder="Enter your email address"
               name="email"
               size="medium"
               fullWidth
             />
+
             <TextField
               type={isPassword ? "password" : "text"}
-              sx={{ minWidth: "500px" }}
               variant="outlined"
-              label="Email address"
-              placeholder="Enter your email address"
-              name="email"
+              id="password"
+              label="Password"
+              sx={{ minWidth: "500px" }}
+              placeholder="Enter your valid password"
+              name="passwordz"
               size="medium"
               fullWidth
                slotProps={{
@@ -75,7 +84,11 @@ export default function LoginPage() {
                             },
                         }}
             />
-          </FormControl>
+            <Link component="text" sx={{ textDecoration: "none", mb: 5 }}>Forgot password?</Link>
+            <Button variant="contained" sx={{ textTransform: "none", fontSize: {md: "1rem"}, padding: "8px 3px", mb: 2, bgcolor: "#163832" }} size="medium" disabled>Log in</Button>
+            <Button variant="text" sx={{ textTransform: "none", fontWeight: 500, fontSize: "16px" }} href="/register">New to Vestir? Join</Button>
+          
+  
         </Stack>
       </Box>
     </Box>

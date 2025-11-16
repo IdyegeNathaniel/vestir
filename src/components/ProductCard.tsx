@@ -33,7 +33,7 @@ export const ProductCard = ({ product }: { product: ProductType }) => {
           <Typography variant="body2" sx={{ fontSize: { xs: "14px", md: "18px" }, fontWeight: 600 }}>${product.price}</Typography>
           <Rating defaultValue={product.rating} precision={0.5} size="small" readOnly />
         </Stack>
-        <Button variant="contained" size="medium"  sx={{textTranform: "none", bgcolor: "#163832", '&:hover': { bgcolor: "#235347" }}} startIcon={<ShoppingCart style={{ width: "14px", height: "14px" }} />}>Add to Cart</Button>
+        <Button variant="contained" size="medium"  sx={{textTransform: "none", bgcolor: "#163832", '&:hover': { bgcolor: "#235347" }}} startIcon={<ShoppingCart style={{ width: "14px", height: "14px" }} />}>Add to Cart</Button>
       </Box>
     </Box>
   ) 
