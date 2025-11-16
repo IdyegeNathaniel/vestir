@@ -14,6 +14,7 @@ export default function page() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        padding: "12px 24px"
       }}>
         <Typography variant='h4' sx={{ fontWeight: 600,  fontSize: { xs: "20px", md: "34px" } }} gutterBottom>How would you like to use Vestir?</Typography>
         <Typography variant='body1' sx={{ fontSize: "18px" , color: "#333" }} gutterBottom>Please select an option below</Typography>
