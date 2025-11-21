@@ -3,7 +3,6 @@
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import Button from "@mui/material/Button";
@@ -12,7 +11,6 @@ import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import Link from "@mui/material/Link";
-import InputLabel from "@mui/material/InputLabel";
 
 export default function LoginPage() {
   const [isPassword, setIsPassword] = useState<boolean>(true);
