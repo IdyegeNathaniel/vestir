@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Personal from "@/components/assets/Images/Personal.png";
 import Couple from "@/components/assets/Images/Vendor.png";
-import { Button } from "@mui/material";
 
 const AccountTypes = () => {
   return (

@@ -2,7 +2,6 @@
 
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
-import Grid from "@mui/material/Grid"
 import Image from "next/image"
 import { images } from "./assets/assets"
 import { motion } from "framer-motion"

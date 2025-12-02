@@ -4,7 +4,7 @@ import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(Box)(({ }) => ({
   display: "flex",
   animation: "marquee 30s linear infinite",
 

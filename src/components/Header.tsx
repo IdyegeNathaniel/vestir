@@ -16,7 +16,7 @@ import { Marquee } from "../components/Marquee";
 import Link from "next/link";
 import { Tooltip } from "@mui/material";
 
-const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+const StyledBadge = styled(Badge)<BadgeProps>(({ }) => ({
   "& .MuiBadge-badge": {
     right: 5,
     top: 10,

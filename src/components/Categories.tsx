@@ -2,7 +2,6 @@
 
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Footprints, Handbag, Shirt, ShoppingCart, Watch } from "lucide-react";
 import Grid from "@mui/material/Grid";

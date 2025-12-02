@@ -2,7 +2,6 @@
 import { notFound } from "next/navigation";
 import { getProductById } from "@/app/lib/product";
 import ProductDisplay from "@/components/ProductDisplay";
-import { ProductType } from "@/components/assets/assets";
 
 export default async function SingleProduct({ params }: { params: Promise<{ id: string }> }) {
   

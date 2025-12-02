@@ -1,18 +1,17 @@
 "use client"
 
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import { Categories } from "./Categories"
 import { ProductCard } from "./ProductCard"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { products } from "../components/assets/assets"
 import Button from "@mui/material/Button"
 
 
 export const ProductsList = () => {
     // const [products, setProducts] =useState<string[]>([])
-    const [loading, setLoading] = useState<boolean>(false);
+    //const [loading, setLoading] = useState<boolean>(false);
     const [allProducts, setAllProducts] = useState<number>(8)
 
     const handleshowMore = () => { setAllProducts(products.length) };

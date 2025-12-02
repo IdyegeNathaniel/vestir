@@ -1,4 +1,3 @@
-import { AuthFooter } from "@/components/AuthFooter";
 import { AuthHeader } from "@/components/AuthHeader";
 import { Metadata } from "next";
 import { Inter, Quintessential } from "next/font/google";
@@ -19,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Vestir | Welcome to Vestir",
-  description: "Welcome to vestir",
+  description: "Welcome to vestir | Men's ashion Store",
 };
 
 export default function AuthLayout({

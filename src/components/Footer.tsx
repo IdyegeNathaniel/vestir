@@ -1,6 +1,5 @@
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import { Divider } from "@mui/material";

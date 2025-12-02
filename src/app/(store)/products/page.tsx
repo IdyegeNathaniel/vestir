@@ -1,11 +1,9 @@
 "use client"
 
-import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import { Categories } from "@/components/Categories"
 import { ProductCard } from "@/components/ProductCard"
-import { useState, useEffect } from "react"
 import { products } from "@/components/assets/assets"
 
 

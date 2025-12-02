@@ -1,6 +1,6 @@
 "use client";
 
-import { TextField, Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { MinusIcon, PlusIcon } from "lucide-react";
 import { useState } from "react";
