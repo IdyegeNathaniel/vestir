@@ -22,7 +22,7 @@ export default function Cart() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [shippingForm ] = useState(null);
+  const [ shippingForm, setShippingForm ] = useState(null);
 
   const activeStep = parseInt(searchParams.get("step") || "1");
 
@@ -175,7 +175,7 @@ export default function Cart() {
                 ))}
               </Box>)
             : activeStep === 2 ? (
-            <AddressForm />
+            <AddressForm setShippingForm={setShippingForm} />
           ) : activeStep === 3 &&
             shippingForm ? ( 
             <PaymentMethod />

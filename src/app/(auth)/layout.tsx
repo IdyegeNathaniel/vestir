@@ -28,7 +28,7 @@ export default function AuthLayout({
     <html lang="en" className={quintessential.variable}>
       <body className={`${inter.variable} antialiased`}>
         <AuthHeader />
-        {children}
+          {children}
       </body>
     </html>
   );
