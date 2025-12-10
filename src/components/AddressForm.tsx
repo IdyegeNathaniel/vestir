@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import InputLabel from "@mui/material/InputLabel";
 import Stack from "@mui/material/Stack";
-import React, { useState } from "react";
+import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { shippingFormSchema, ShippingFormInputs } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -40,7 +40,7 @@ const AddressForm = ({
 
   const handleShippingForm: SubmitHandler<ShippingFormInputs> = (data) => {
     setShippingForm(data)
-    router.push("/cart?step=3", { scroll: false })
+    router.push("/cart?step=3")
 
   }
 

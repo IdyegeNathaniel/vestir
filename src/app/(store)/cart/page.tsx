@@ -250,7 +250,7 @@ export default function Cart() {
             </Stack>
             {activeStep === 1 && (
               <Button
-                onClick={() => router.push("/cart?step=2", { scroll: false })}
+                onClick={() => router.push("/cart?step=2" )}
                 endIcon={<ArrowRight size={15} />}
                 sx={{
                   backgroundColor: "#051F20",
