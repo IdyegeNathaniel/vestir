@@ -17,12 +17,13 @@ import { ArrowRight } from "lucide-react";
 import { Divider } from "@mui/material";
 import AddressForm from "@/components/AddressForm";
 import PaymentMethod from "@/components/PaymentMethod";
+import { ShippingFormInputs } from "@/types";
 
 export default function Cart() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [ shippingForm, setShippingForm ] = useState(null);
+  const [shippingForm, setShippingForm] = useState<ShippingFormInputs | null>(null);
 
   const activeStep = parseInt(searchParams.get("step") || "1");
 
@@ -47,7 +48,7 @@ export default function Cart() {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
-            alignItems: {xs: "start", md:"center"},
+            alignItems: { xs: "start", md: "center" },
             gap: 3,
             my: 4,
           }}
@@ -97,23 +98,22 @@ export default function Cart() {
               md: "row",
             },
             gap: 8,
-            alignItems:{ xs: "center", md:"start"},
-            justifyContent: "center"
+            alignItems: { xs: "center", md: "start" },
+            justifyContent: "center",
           }}
         >
           {/* CART PRODUCT */}
 
           <Box
             sx={{
-              width: {xs: "100%", md: "60%"},
+              width: { xs: "100%", md: "60%" },
               backgroundColor: "#dedede",
               borderRadius: "10px",
               padding: "12px",
             }}
           >
-
-            { activeStep === 1 ? (
-             <Box>
+            {activeStep === 1 ? (
+              <Box>
                 {products.map((product) => (
                   <Box
                     key={product.id}
@@ -122,7 +122,7 @@ export default function Cart() {
                       justifyContent: "center",
                       alignItems: "center",
                       mb: 2,
-                      borderBottom: "1px solid white"
+                      borderBottom: "1px solid white",
                     }}
                   >
                     <Box sx={{ width: "25%" }}>
@@ -144,7 +144,10 @@ export default function Cart() {
                     >
                       <Typography
                         variant="body1"
-                        sx={{ fontWeight: 600, fontSize: { xs: "12px", md: "16px" } }}
+                        sx={{
+                          fontWeight: 600,
+                          fontSize: { xs: "12px", md: "16px" },
+                        }}
                         gutterBottom
                       >
                         {product.title}
@@ -166,27 +169,29 @@ export default function Cart() {
                       }}
                     >
                       <Tooltip title="Remove" enterDelay={500} leaveDelay={300}>
-                        <IconButton sx={{ "&:hover": {bgcolor: "#efdfdfff"} }}>
+                        <IconButton
+                          sx={{ "&:hover": { bgcolor: "#efdfdfff" } }}
+                        >
                           <DeleteForeverRounded color="error" />
                         </IconButton>
                       </Tooltip>
                     </Box>
                   </Box>
                 ))}
-              </Box>)
-            : activeStep === 2 ? (
-            <AddressForm setShippingForm={setShippingForm} />
-          ) : activeStep === 3 &&
-            shippingForm ? ( 
-            <PaymentMethod />
-           ) :
-            (<Typography color="error">Please Fill Shipping Form</Typography>)} 
+              </Box>
+            ) : activeStep === 2 ? (
+              <AddressForm setShippingForm={setShippingForm} />
+            ) : activeStep === 3 && shippingForm ? (
+              <PaymentMethod />
+            ) : (
+              <Typography color="error">Please Fill Shipping Form</Typography>
+            )}
           </Box>
 
           {/*  DETAILS  */}
           <Box
             sx={{
-              width: {xs: "100%", md:"30%"},
+              width: { xs: "100%", md: "30%" },
               display: "flex",
               flexDirection: "column",
               gap: 2,
@@ -208,7 +213,7 @@ export default function Cart() {
                 sx={{ display: "flex", justifyContent: "space-between" }}
               >
                 <Typography variant="body1">Subtotal</Typography>
-                <Typography variant="body1" sx={{ color: "black"}}>
+                <Typography variant="body1" sx={{ color: "black" }}>
                   ${products.reduce((acc, item) => 1 + item.price * 3, 0)}
                 </Typography>
               </Box>
@@ -230,7 +235,12 @@ export default function Cart() {
               <Divider sx={{ bgcolor: "gray" }} />
               <Box
                 component="div"
-                sx={{ display: "flex", justifyContent: "space-between", fontWeight: 600, color: "black"  }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontWeight: 600,
+                  color: "black",
+                }}
               >
                 <Typography variant="body1">Total</Typography>
                 <Typography variant="body1" sx={{}}>
@@ -242,7 +252,11 @@ export default function Cart() {
               <Button
                 onClick={() => router.push("/cart?step=2", { scroll: false })}
                 endIcon={<ArrowRight size={15} />}
-                sx={{ backgroundColor: "#051F20", color: "white", textTransform: "none" }}
+                sx={{
+                  backgroundColor: "#051F20",
+                  color: "white",
+                  textTransform: "none",
+                }}
               >
                 Continue
               </Button>
