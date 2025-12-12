@@ -22,9 +22,7 @@ const PaymentMethod = () => {
     resolver: zodResolver(paymentFormSchema),
   });
 
-  const handleShippingForm: SubmitHandler<PaymentFormInputs> = (data) => {
-
-  }
+  const handleShippingForm: SubmitHandler<PaymentFormInputs> = (data) => console.log(data)
 
   return (
     <Box component="div">
