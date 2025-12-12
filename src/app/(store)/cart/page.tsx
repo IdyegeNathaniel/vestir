@@ -283,7 +283,7 @@ const steps = [
   },
 ];
 
-export const products: ProductType[] = [
+const products: ProductType[] = [
   {
     id: 1,
     title: "Blue & Black Check Shirt",
