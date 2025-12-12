@@ -19,7 +19,11 @@ import AddressForm from "@/components/AddressForm";
 import PaymentMethod from "@/components/PaymentMethod";
 import { ShippingFormInputs } from "@/types";
 
+export const dynamic = 'force-dynamic';
+
 export default function Cart() {
+
+
   const router = useRouter();
   const searchParams = useSearchParams();
 
