@@ -136,7 +136,7 @@ const Header: React.FC = () => {
               variant="h3"
               sx={{
                 fontFamily: 'var(--font-quintessential)',
-                fontSize: { xs: "2rem", md: "3rem" },
+                fontSize: { xs: "1.5rem", md: "3rem" },
                 fontWeight: 400,
               }}
             >

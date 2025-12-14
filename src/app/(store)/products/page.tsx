@@ -1,17 +1,20 @@
-"use client"
 
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import { Categories } from "@/components/Categories"
 import { ProductCard } from "@/components/ProductCard"
 import { products } from "@/components/assets/assets"
+import { Suspense } from "react"
+import Loading from "@/app/loading"
 
 
 export default function ProductPage() {
      return (
          <Box component="section" sx={{ padding: "24px" }}>
                 <Box sx={{ marginY: 5 }}>
-                    <Categories />
+                    <Suspense fallback={<Loading />}>
+                        <Categories />
+                    </Suspense>
                 </Box>
     
                 <Box sx={{ alignItems: "center" }}>

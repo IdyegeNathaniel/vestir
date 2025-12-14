@@ -8,13 +8,12 @@ export default function page() {
     <Box   
       component="section"
       sx={{
-        width: "100%",
-        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "12px 24px"
+        padding: "12px",
+        my: 10
       }}>
         <Typography variant='h4' sx={{ fontWeight: 600,  fontSize: { xs: "20px", md: "34px" } }} gutterBottom>How would you like to use Vestir?</Typography>
         <Typography variant='body1' sx={{ fontSize: "18px" , color: "#333" }} gutterBottom>Please select an option below</Typography>
@@ -24,4 +23,4 @@ export default function page() {
         <Button variant="text" href="/login" sx={{ textTransform: "none" }}>I already have an account</Button>
       </Box>
   )
-}
+} 
