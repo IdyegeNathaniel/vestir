@@ -5,14 +5,14 @@ import { Categories } from "@/components/Categories"
 import { ProductCard } from "@/components/ProductCard"
 import { products } from "@/components/assets/assets"
 import { Suspense } from "react"
-import Loading from "@/app/loading"
+import { Typography } from "@mui/material"
 
 
 export default function ProductPage() {
      return (
          <Box component="section" sx={{ padding: "24px" }}>
                 <Box sx={{ marginY: 5 }}>
-                    <Suspense fallback={<Loading />}>
+                    <Suspense fallback={<Typography>Loading...</Typography>}>
                         <Categories />
                     </Suspense>
                 </Box>
