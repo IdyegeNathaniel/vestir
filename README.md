@@ -1,11 +1,6 @@
-### **VESTIR: E-commerce Fashion Store**
+# **VESTIR: E-commerce Fashion Store**
 ---
 A modern, full-featured e-commerce application built with Next.js 14, TypeScript, and Material-UI. Vestir provides a seamless shopping experience for fashion enthusiasts.
-
-
-### **Overview**
----
-FitForecast takes the guesswork out of getting dressed by combining real-time weather data with smart outfit suggestions. Simply check the app to see what the weather will be like and what you should wear.
 
 ### **Features**
 ---
