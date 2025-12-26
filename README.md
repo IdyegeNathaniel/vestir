@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **VESTIR: E-commerce Fashion Store**
+---
+A modern, full-featured e-commerce application built with Next.js 14, TypeScript, and Material-UI. Vestir provides a seamless shopping experience for fashion enthusiasts.
 
-## Getting Started
+### **Features**
+---
+* **Modern UI/UX** - Clean, responsive design with Material-UI components
+* **Multi-Step Checkout** - Intuitive cart, shipping, and payment flow
+* **Product Catalog** - Browse men's products with detailed information
+* **Responsive Design** - Works seamlessly across desktop and mobile devices
+* **Form Validation** - Robust validation using Zod schemas
+* **Type-Safe** - Built entirely with TypeScript
 
-First, run the development server:
+### **Tech Stack**
+---
+* Framework: Next.js 14 (App Router)
+* Language: TypeScript
+* UI Library: Material-UI (MUI)
+* Validation: Zod
+* Icons: Lucide React
+* Image Optimization: Next.js Image Component
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### **Getting Started**
+---
+*Prerequisites*
+
+* Node.js 16.x or higher
+* npm or yarn
+
+### **Installation**
+---
+1. Clone the repository
+
+* git clone
+  ```js
+  https://github.com/IdyegeNathaniel/vestir.git
+  ```
+
+2. Change to project directory
+```js 
+cd vestir
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```js
+npm install
+```
+ or
+```js
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server
 
-## Learn More
+```js
+npm run dev
+```
+or
+```js
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+* Open on your browser
+  http://localhost:3000
+  
+### **Building for Production**
+---
+* npm run build
+* npm start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Contributing**
+---
+Contributions are welcome! Please feel free to submit a Pull Request.
