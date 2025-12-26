@@ -10,16 +10,16 @@ export const Footer: React.FC = () => {
         <Box component="section" sx={{ maxWidth: '100%', mx: 'auto', bgcolor: '#8EB69B', padding: '8px 24px', }}>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: "flex-start", md: 'center' }, gap: 5, py: 3 }} >
                 <Stack spacing="3">
-                    <Typography sx={{fontWeight: 600, mb: 2}}>Legal</Typography>
+                    <Typography sx={{fontWeight: 600, mb: 3, fontSize: "20px"}}>Legal</Typography>
                     {["Privacy Policy","Return and Refunds","Shipping Policy","Terms of Service"].map((item, index) => (
-                        <Typography key={index} sx={{fontSize: "12px", py: "4px",}}>{item}</Typography>
+                        <Typography key={index} sx={{fontSize: "16px", py: "4px",}}>{item}</Typography>
                     ))}
                 </Stack>
 
                 <Stack spacing="3">
-                    <Typography sx={{fontWeight: 600, mb: 2}}>Brand</Typography>
+                    <Typography sx={{fontWeight: 600, mb: 3, fontSize: "20px"}}>Brand</Typography>
                     {["About Us","Best Sellers","Contact Us", "Socials"].map((item, index) => (
-                        <Typography key={index} sx={{fontSize: "12px", py: "4px",}}>{item}</Typography>
+                        <Typography key={index} sx={{fontSize: "16px", py: "4px",}}>{item}</Typography>
                     ))}
                 </Stack>
             </Box>

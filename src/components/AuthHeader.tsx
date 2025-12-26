@@ -23,14 +23,14 @@ export const AuthHeader = () => {
   
   return (
     <Box sx={{ width: "100%", flexGrow: 1 }}>
-        <AppBar position="fixed" sx={{bgcolor: scrolled ? "rgba(230, 212, 212, 0.4)" : "transparent" , padding: {xs: "24px", md: "24px 40px"}, zIndex: 50 }} elevation={0}>
+        <AppBar position="sticky" sx={{top: 0, bgcolor: scrolled ? "rgba(230, 212, 212, 0.4)" : "transparent" , padding: {xs: "24px", md: "24px 40px"}, zIndex: 50 }} elevation={0}>
             <Toolbar sx={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
                 <Typography
               variant="h3"
               sx={{
                 color: "#163832",
                 fontFamily: 'var(--font-quintessential)',
-                fontSize: { xs: "1.5rem", md: "3rem" },
+                fontSize: { xs: "2.5rem", md: "3rem" },
                 fontWeight: 400,
               }}
             >

@@ -136,7 +136,7 @@ const Header: React.FC = () => {
               variant="h3"
               sx={{
                 fontFamily: 'var(--font-quintessential)',
-                fontSize: { xs: "1.5rem", md: "3rem" },
+                fontSize: { xs: "2.3rem", md: "3rem" },
                 fontWeight: 400,
               }}
             >
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
             {/* Profile */}
               <Tooltip title="Profile" enterDelay={500} leaveDelay={300}>
                 <IconButton aria-label="profile" component={Link} href="/login" >
-                  <Person sx={{ fontSize: {xs: "1rem", md: "2rem"}, color: "#163832" }} />
+                  <Person sx={{ fontSize: {xs: "2rem", md: "2rem"}, color: "#163832" }} />
                 </IconButton>
               </Tooltip>
             
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
             <Tooltip title="Cart" enterDelay={500} leaveDelay={300}>
               <StyledBadge color="primary" badgeContent={2}>
                 <IconButton aria-label="cart" component={Link} href="/cart" >
-                  <ShoppingBagOutlinedIcon sx={{ fontSize: {xs: "1rem", md: "2rem"}, color: "#163832" }} />
+                  <ShoppingBagOutlinedIcon sx={{ fontSize: {xs: "1.5rem", md: "2rem"}, color: "#163832" }} />
                 </IconButton>
               </StyledBadge>
             </Tooltip>

@@ -19,7 +19,7 @@ const AccountTypes = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: {xs: "row", md: "column"},
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
@@ -38,7 +38,7 @@ const AccountTypes = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: {xs: "row", md: "column"},
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
